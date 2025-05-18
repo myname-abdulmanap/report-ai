@@ -598,3 +598,435 @@
             background-color: #ccc;
             border-radius: 20px;
         }
+
+
+        
+      .export-options {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 14px;
+}
+.export-options label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+      .top-detections-table {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.top-detections-table h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.detection-table-container {
+    overflow-x: auto;
+}
+
+.detection-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.detection-table th {
+    background-color: #f5f7f9;
+    color: #5a6474;
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #e2e8f0;
+    font-weight: 600;
+}
+
+.detection-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #333;
+}
+
+.detection-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.detection-value {
+    font-weight: 600;
+    color: #2563eb;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.pagination-btn {
+    background-color: #fff;
+    border: 1px solid #d1d5db;
+    color: #4b5563;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pagination-btn.active {
+    background-color: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+.pagination-btn:hover:not(.active) {
+    background-color: #f3f4f6;
+}
+
+.pagination-ellipsis {
+    margin: 0 4px;
+    color: #4b5563;
+}
+
+.pagination-info {
+    margin-left: 15px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .detection-table {
+        font-size: 13px;
+    }
+    
+    .detection-table th, 
+    .detection-table td {
+        padding: 10px 12px;
+    }
+    
+    .pagination {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pagination-info {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+      /* Original stat-card CSS */
+.stat-card {
+    background-color: var(--primary); /* Changed from white to primary color */
+    border-radius: 10px;
+    padding: 30px; /* Increased padding from 20px to 30px */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    color: white; /* Added white text color */
+    height: 180px; /* Added fixed height to make cards larger */
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Removed the border-left properties since we're using full background colors */
+
+/* Updated each card type to have its respective full background color */
+.stat-card.primary {
+    background-color: var(--primary);
+}
+
+.stat-card.success {
+    background-color: var(--success);
+}
+
+.stat-card.warning {
+    background-color: var(--warning);
+}
+
+.stat-card.danger {
+    background-color: var(--danger);
+}
+
+/* Text color adjustments */
+.stat-card .stat-info h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.stat-card .stat-info p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8); /* Changed from dark gray to translucent white */
+    margin-bottom: 8px;
+}
+
+/* Updated icon styles */
+.stat-card .stat-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    color: white; /* Icon color now white */
+}
+
+/* No need for individual icon background colors since we're using a consistent approach */
+.stat-card.primary .stat-icon,
+.stat-card.success .stat-icon,
+.stat-card.warning .stat-icon,
+.stat-card.danger .stat-icon {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Adjusted trend colors for better visibility on colored backgrounds */
+.stat-trend {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white; /* Default to white */
+}
+
+.stat-trend.positive {
+    color: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
+}
+
+.stat-trend.negative {
+    color: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
+}
+
+/* Optional: Add icons to trends to indicate up/down instead of relying on color alone */
+.stat-trend.positive::before {
+    content: "↑"; /* Up arrow */
+    margin-right: 2px;
+}
+
+.stat-trend.negative::before {
+    content: "↓"; /* Down arrow */
+    margin-right: 2px;
+}
+
+
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+    
+    .search-bar {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      max-width: 600px;
+    }
+    
+    .search-bar input {
+      flex-grow: 1;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    
+    .search-bar button, .btn-export {
+      padding: 10px 15px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .search-bar button:hover, .btn-export:hover {
+      background-color: #2980b9;
+    }
+    
+    .btn-export {
+      background-color: #27ae60;
+    }
+    
+    .btn-export:hover {
+      background-color: #219653;
+    }
+    
+    .top-detections-table {
+      width: 100%;
+      overflow-x: auto;
+    }
+    
+    .detection-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    
+    .detection-table th, .detection-table td {
+      padding: 12px 15px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .detection-table th {
+      background-color: #f1f1f1;
+      color: #333;
+      font-weight: 600;
+    }
+    
+    .detection-table tr:hover {
+      background-color: #f9f9f9;
+    }
+    
+    .alert {
+      background-color: #e74c3c;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 3px;
+      font-weight: bold;
+    }
+    
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 5px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .pagination-btn {
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      background-color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    
+    .pagination-btn.active {
+      background-color: #3498db;
+      color: white;
+      border-color: #3498db;
+    }
+    
+    .pagination-ellipsis {
+      padding: 8px 5px;
+    }
+    
+    .pagination-info {
+      margin-left: auto;
+      font-size: 14px;
+      color: #666;
+    }
+    
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .search-bar {
+        width: 100%;
+      }
+      
+      .detection-table-container {
+        overflow-x: auto;
+      }
+    }
+    
+    .table-loading {
+      text-align: center;
+      padding: 20px;
+      font-style: italic;
+      color: #666;
+    }
+    
+    .no-results {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+    }
+
+    .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  border: 1px solid #ccc;
+  z-index: 1;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.dropdown-menu a {
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
